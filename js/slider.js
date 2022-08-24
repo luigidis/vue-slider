@@ -17,16 +17,16 @@ const app = new Vue ({
 	methods: {
 		nextSlide () {
 			this.currentIndex++
-			if (this.currentIndex === 5) {
+			if (this.currentIndex >= this.slides.length) {
 				this.currentIndex = 0
 			}
 		},
 		prevSlide () {
 			this.currentIndex--
 			// console.log(this.currentIndex)
-			if (this.currentIndex === -1) {
+			if (this.currentIndex < 0) {
 				// console.log('call back')
-				this.currentIndex = 4
+				this.currentIndex = this.slides.length - 1
 			}
 		},
 		
