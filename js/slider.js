@@ -13,6 +13,7 @@ const app = new Vue ({
 	data: {
 		slides,
 		currentIndex: 0,
+		timer: 0,
 	},
 	methods: {
 		nextSlide () {
@@ -29,6 +30,19 @@ const app = new Vue ({
 				this.currentIndex = this.slides.length - 1
 			}
 		},
+		play () {
+			let app = this;
+			this.timer = setInterval(function() {
+			  app.nextSlide();
+			}, 3000)
+		},
+		resetPlay () {
+			clearInterval(this.timer);
+			this.play();
+		  },
+		created () {
+			this.play()
+		  }
+	}
 		
-	},
 })
