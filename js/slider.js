@@ -12,9 +12,15 @@ const app = new Vue ({
 	el: '#root',
 	data: {
 		slides,
-		active: true,
+		active: [true, false, false, false, false]
 	},
 	methods: {
-		
+		isActive () {
+			if (active) {
+				return false
+			} else {
+				return true
+			}
+		},
 	},
 })

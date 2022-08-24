@@ -32,7 +32,7 @@
           <li class="slide">
             <img src="./img/05.jpg" alt="">
           </li> -->
-          <li class="slide" v-for="element in slides" >
+          <li class="slide" v-for="element in slides"  v-for=element in active :class="active ? 'active' : '' ">
             <img :src="element" :alt="element">
           </li>
         </ul>
