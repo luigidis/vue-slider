@@ -32,16 +32,16 @@
           <li class="slide">
             <img src="./img/05.jpg" alt="">
           </li> -->
-          <li class="slide" v-for="element in slides"  v-for=element in active :class="active ? 'active' : '' ">
+          <li class="slide" v-for="(element,index) in slides"  :class="(index===currentIndex) ? 'active' : '' ">
             <img :src="element" :alt="element">
           </li>
         </ul>
 
         <div class="arrows">
-          <p class="arrow-prev">
+          <p class="arrow-prev" @click="prevSlide">
             <i class="fa-solid fa-chevron-left"></i>
           </p>
-          <p class="arrow-next">
+          <p class="arrow-next" @click="nextSlide">
             <i class="fa-solid fa-chevron-right"></i>
           </p>
         </div>

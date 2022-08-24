@@ -12,15 +12,23 @@ const app = new Vue ({
 	el: '#root',
 	data: {
 		slides,
-		active: [true, false, false, false, false]
+		currentIndex: 0,
 	},
 	methods: {
-		isActive () {
-			if (active) {
-				return false
-			} else {
-				return true
+		nextSlide () {
+			this.currentIndex++
+			if (this.currentIndex === 5) {
+				this.currentIndex = 0
 			}
 		},
+		prevSlide () {
+			this.currentIndex--
+			// console.log(this.currentIndex)
+			if (this.currentIndex === -1) {
+				// console.log('call back')
+				this.currentIndex = 4
+			}
+		},
+		
 	},
 })
